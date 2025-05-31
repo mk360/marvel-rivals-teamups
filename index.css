@@ -1,0 +1,198 @@
+.hero-picture {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hulk {
+    background-position: 9% 0;
+    background-image: url("./banners/hulk.png");
+}
+
+.captainamerica {
+    background-image: url("./banners/captain\ america.png");
+    background-position: 5% 0;
+}
+
+.thor {
+    background-image: url("./banners/thor.png");
+    background-position: 3% 0;
+}
+
+.thething {
+    background-image: url("./banners/the\ thing.png");
+    background-position: 5%;
+}
+
+.drstrange {
+    background-image: url("./banners/dr\ strange.png");
+    background-position: 5%;
+}
+
+.groot {
+    background-image: url("./banners/groot.png");
+    background-position: 5%;
+}
+
+.magneto {
+    background-image: url("./banners/magneto.png");
+    background-position: 5%;
+}
+
+.peniparker {
+    background-image: url("./banners/peni parker.png");
+    background-position: 0%;
+}
+
+.emmafrost {
+    background-image: url("./banners/emma frost.png");
+    background-position: 5%;
+}
+
+.scarletwitch {
+    background-image: url("./banners/scarlet witch.png");
+    background-position: 5%;
+}
+
+.storm {
+    background-image: url("./banners/storm.png");
+}
+
+.ultron {
+    background-image: url("./banners/ultron.png");
+    background-position: 16%;
+}
+
+.venom {
+    background-image: url("./banners/venom.png");
+    background-position: 5%;
+}
+
+.ironman {
+    background-image: url("./banners/iron man.png");
+    background-position: 5%;
+}
+
+.spider-man {
+    background-image: url("./banners/spider-man.png");
+    background-position: 5%;
+}
+
+.hawkeye {
+    background-image: url("./banners/hawkeye.png");
+    background-position: 5%;
+}
+
+.thepunisher {
+    background-image: url("./banners/the punisher.png");
+    background-position: 5%;
+}
+
+.wintersoldier {
+    background-image: url("./banners/winter soldier.png");
+    background-position: 5%;
+}
+
+.wolverine {
+    background-image: url("./banners/wolverine.png");
+    background-position: 5%;
+}
+
+.blackpanther {
+    background-image: url("./banners/black panther.png");
+    background-position: 5%;
+}
+
+.psylocke {
+    background-image: url("./banners/psylocke.png");
+    background-position: 5%;
+}
+
+.magik {
+    background-image: url("./banners/magik.png");
+    background-position: 7%;
+}
+
+.ironfist {
+    background-image: url("./banners/iron fist.png");
+    background-position: 8%;
+}
+
+.moonknight {
+    background-image: url("./banners/moon knight.png");
+    background-position: 5%;
+}
+
+.blackwidow {
+    background-image: url("./banners/black widow.png");
+    background-position: 5%;
+}
+
+.star-lord {
+    background-image: url("./banners/star-lord.png");
+    background-position: 8%;
+}
+
+.namor {
+    background-image: url("./banners/namor.png");
+    background-position: 5%;
+}
+
+.squirrelgirl {
+    background-image: url("./banners/squirrel girl.png");
+    background-position: 5%;
+}
+
+.humantorch {
+    background-image: url("./banners/human torch.png");
+    background-position: 5%;
+}
+
+.mrfantastic {
+    background-image: url("./banners/mr. fantastic.png");
+    background-position: 5%;
+}
+
+.hela {
+    background-image: url("./banners/hela.png");
+    background-position: 5%;
+}
+
+.adamwarlock {
+    background-image: url("./banners/adam warlock.png");
+    background-position: 5%;
+}
+
+.lunasnow {
+    background-image: url("./banners/luna snow.png");
+    background-position: 3%;
+}
+
+.mantis {
+    background-image: url("./banners/mantis.png");
+    background-position: 5%;
+}
+
+.jeffthelandshark {
+    background-image: url("./banners/jeff the land shark.png");
+    background-position: 1%;
+}
+
+.cloakdagger {
+    background-image: url("./banners/cloak.png");
+    background-position: 17%;
+}
+
+.rocketraccoon {
+    background-image: url("./banners/rocket raccoon.png");
+    background-position: 1%;
+}
+
+.invisiblewoman {
+    background-image: url("./banners/invisible woman.png");
+    background-position: 7%;
+}
+
+.loki {
+    background-image: url("./banners/loki.png");
+    background-position: 5%;
+}
