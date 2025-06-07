@@ -65,13 +65,95 @@ const TEAMUPS_DATA = {
             "Mantis": "healer",
             "Rocket Raccoon": "healer"
         },
+        TEAMUP_NAMES: {
+            "Dr. Strange": {
+                teamup: "Arcane Order",
+                effect: "Grants Dr. Strange 150 extra HP. Replaces Scarlet Witch's E Ability with Mystic Burst."
+            },
+            "Iron Fist": {
+                teamup: "Atlas Bond",
+                effect: "Grants Iron Fist a 10% damage boost. Grants Luna Snow the \"Frozen Chi\" Ability, which hits enemies with an ice shockwave."
+            },
+            "Luna Snow": {
+                teamup: "Chilling Assault",
+                effect: "Grants Luna Snow a 15% healing boost. Grants Hawkeye the \"Ice Arrow\" Ability, which pierces through obstacles and freezes enemies."
+            },
+            "Magik": {
+                teamup: "Dimensional Shortcut",
+                effect: "Grants Magik a 15% damage boost. Grants Black Panther the \"Wakandan Master\" Ability, allowing him to get Bonus Health and teleport back a few steps."
+            },
+            "Spider-Man": {
+                teamup: "ESU Alumnus",
+                effect: "Grants Spider-Man a 10% damage boost. Grants Squirrel Girl the \"Webbed Acorn\" Ability, which is a projectile that stuns targets in place."
+            },
+            "Invisible Woman": {
+                teamup: "Fantastic Four",
+                effect: "Grants Invisible Woman a 15% healing boost. Grants the other Fantastic 4 members an extra Ability, which grants up to 100 Bonus Health."
+            },
+            "Wolverine": {
+                teamup: "Metal Cannonball",
+                effect: "Grants Hulk and The Thing an Ability which allows them to launch Wolverine forward. They can launch him together, or separately."
+            },
+            "Hulk": {
+                teamup: "Gamma Monstro",
+                effect: "Grants Hulk 100 extra HP in both his transformed forms. Grants Namor the \"Gamma Monstro\" Ability, which allows him to summon an upgraded Monstro."
+            },
+            "Adam Warlock": {
+                teamup: "Guardian Revival",
+                effect: "Grants Adam Warlock a 15% healing boost. Grants Mantis and Star-Lord the Ability to respawn in-battle when they die."
+            },
+            "Jeff the Land Shark": {
+                teamup: "Jeff-Nado",
+                effect: "When Storm activates Omega Hurricane, then Jeff activates It's Jeff!, both Ultimates can combine, swallowing enemies and trapping them inside the hurricane."
+            },
+            "Cloak & Dagger": {
+                teamup: "Lunar Force",
+                effect: "Grants Cloak & Dagger a 15% healing boost. Grants Moon Knight the Ability \"Full Moon\", allowing him to create an area where he can heal and become invisible."
+            },
+            "Emma Frost": {
+                teamup: "Mental Projection",
+                effect: "Grants Emma Frost 100 extra HP. Grants Magneto and Psylocke an Ability which summons a clone that deals damage separately."
+            },
+            "The Punisher": {
+                teamup: "Operation: Microchip",
+                effect: "Grants The Punisher a 5% damage boost and 25 extra HP. Grants Black Widow the \"Pulse Rifle\" Ability, which allows her to pierce through multiple enemies."
+            },
+            "Groot": {
+                teamup: "Planet X Pals",
+                effect: "Grants Groot 150 extra HP. Grants whoever rides Groot's shoulder (either Rocket Raccoon or Jeff the Land Shark) 35% damage reduction."
+            },
+            "Hela": {
+                teamup: "Ragnarok Rebirth",
+                effect: "Grants Hela a 15% damage boost. Whenever Hela makes a kill, resurrects Thor and Loki if they are waiting to respawn, or grants them Bonus Health if they were alive."
+            },
+            "Rocket Raccoon": {
+                teamup: "Rocket Network",
+                effect: "Grants Rocket Raccoon a 5% healing boost. Upgrades his E Ability, spawning Arachno-Mines and Spider-Drones on top of its existing function. Grants Peni the \"Armored Spider-Nest\" Ability, which spawns an additional Spider-Nest."
+            },
+            "Captain America": {
+                teamup: "Stars Aligned",
+                effect: "Grants Captain America a 5% damage boost and 100 extra HP. Grants both members an extra Ability, which grants bonus health to any ally in the activation range (including Captain America and Winter Soldier)."
+            },
+            "Iron Man": {
+                teamup: "Stark Protocol",
+                effect: "Grants Iron Man a 5% damage boost. Grants Ultron the \"Nano Ray\" Ability, which deals piercing damage to enemies while healing allies in the beam's path."
+            },
+            "Storm": {
+                teamup: "Storming Ignition",
+                effect: "When either of Human Torch or Storm activate their Ultimate Ability, the other can follow up with theirs, creating a burning hurricane."
+            },
+            "Venom": {
+                teamup: "Symbiote Shenanigans",
+                effect: "Grants Venom 150 extra HP. Grants Jeff the Land Shark the \"Guardian of the Deep\" Ability, enabling passive healing, with extra bonus health."
+            }
+        },
         HEROES: {
             tank: ['Captain America', 'Dr. Strange', 'Emma Frost', 'Groot', 'Hulk', 'Magneto', 'Peni Parker', 'The Thing', 'Thor', 'Venom'],
             dps: ['Black Panther', 'Black Widow', 'Hawkeye', 'Hela', 'Human Torch', 'Iron Fist', 'Iron Man', 'Magik', 'Moon Knight', 'Mr. Fantastic', 'Namor', 'Psylocke', 'Scarlet Witch', 'Squirrel Girl', 'Spider-Man', 'Star-Lord', 'Storm', 'The Punisher', 'Winter Soldier', 'Wolverine'],
             healer: ['Adam Warlock', 'Cloak & Dagger', 'Invisible Woman', 'Jeff the Land Shark', 'Loki', 'Luna Snow', 'Mantis', 'Rocket Raccoon', "Ultron"]
         }
     },
-    "Season 2": {
+    "Season 2": { // emma frost update
         TEAM_UPS: {
             // old team-ups
             "Rocket Raccoon": ["The Punisher"],
@@ -93,6 +175,84 @@ const TEAMUPS_DATA = {
             "Dr. Strange": ["Scarlet Witch"],
             "Wolverine": ["The Thing", "Hulk"],
             "Emma Frost": ["Psylocke", "Magneto"],
+        },
+        TEAMUP_NAMES: {
+            "Dr. Strange": {
+                teamup: "Arcane Order",
+                effect: "Grants Dr. Strange 150 extra HP. Replaces Scarlet Witch's E Ability with Mystic Burst."
+            },
+            "Iron Fist": {
+                teamup: "Atlas Bond",
+                effect: "Grants Iron Fist a 10% damage boost. Grants Luna Snow the \"Frozen Chi\" Ability, which hits enemies with an ice shockwave."
+            },
+            "Luna Snow": {
+                teamup: "Chilling Assault",
+                effect: "Grants Luna Snow a 15% healing boost. Grants Hawkeye the \"Ice Arrow\" Ability, which pierces through obstacles and freezes enemies."
+            },
+            "Magik": {
+                teamup: "Dimensional Shortcut",
+                effect: "Grants Magik a 15% damage boost. Grants Black Panther the \"Wakandan Master\" Ability, allowing him to get Bonus Health and teleport back a few steps."
+            },
+            "Spider-Man": {
+                teamup: "ESU Alumnus",
+                effect: "Grants Spider-Man a 10% damage boost. Grants Squirrel Girl the \"Webbed Acorn\" Ability, which is a projectile that stuns targets in place."
+            },
+            "Invisible Woman": {
+                teamup: "Fantastic Four",
+                effect: "Grants Invisible Woman a 15% healing boost. Grants the other Fantastic 4 members an extra Ability, which grants up to 100 Bonus Health."
+            },
+            "Wolverine": {
+                teamup: "Metal Cannonball",
+                effect: "Grants Hulk and The Thing an Ability which allows them to launch Wolverine forward. They can launch him together, or separately."
+            },
+            "Hulk": {
+                teamup: "Gamma Monstro",
+                effect: "Grants Hulk 100 extra HP in both his transformed forms. Grants Namor the \"Gamma Monstro\" Ability, which allows him to summon an upgraded Monstro."
+            },
+            "Adam Warlock": {
+                teamup: "Guardian Revival",
+                effect: "Grants Adam Warlock a 15% healing boost. Grants Mantis and Star-Lord the Ability to respawn in-battle when they die."
+            },
+            "Jeff the Land Shark": {
+                teamup: "Jeff-Nado",
+                effect: "When Storm activates Omega Hurricane, then Jeff activates It's Jeff!, both Ultimates can combine, swallowing enemies and trapping them inside the hurricane."
+            },
+            "Cloak & Dagger": {
+                teamup: "Lunar Force",
+                effect: "Grants Cloak & Dagger a 15% healing boost. Grants Moon Knight the Ability \"Full Moon\", allowing him to create an area where he can heal and become invisible."
+            },
+            "Emma Frost": {
+                teamup: "Mental Projection",
+                effect: "Grants Emma Frost 100 extra HP. Grants Magneto and Psylocke an Ability which summons a clone that deals damage separately."
+            },
+            "The Punisher": {
+                teamup: "Operation: Microchip",
+                effect: "Grants The Punisher a 5% damage boost and 25 extra HP. Grants Black Widow the \"Pulse Rifle\" Ability, which allows her to pierce through multiple enemies."
+            },
+            "Groot": {
+                teamup: "Planet X Pals",
+                effect: "Grants Groot 150 extra HP. Grants whoever rides Groot's shoulder (either Rocket Raccoon or Jeff the Land Shark) 35% damage reduction."
+            },
+            "Hela": {
+                teamup: "Ragnarok Rebirth",
+                effect: "Grants Hela a 15% damage boost. Whenever Hela makes a kill, resurrects Thor and Loki if they are waiting to respawn, or grants them Bonus Health if they were alive."
+            },
+            "Rocket Raccoon": {
+                teamup: "Rocket Network",
+                effect: "Grants Rocket Raccoon a 5% healing boost. Upgrades his E Ability, spawning Arachno-Mines and Spider-Drones on top of its existing function. Grants Peni the \"Armored Spider-Nest\" Ability, which spawns an additional Spider-Nest."
+            },
+            "Captain America": {
+                teamup: "Stars Aligned",
+                effect: "Grants Captain America a 5% damage boost and 100 extra HP. Grants both members an extra Ability, which grants bonus health to any ally in the activation range (including Captain America and Winter Soldier)."
+            },
+            "Storm": {
+                teamup: "Storming Ignition",
+                effect: "When either of Human Torch or Storm activate their Ultimate Ability, the other can follow up with theirs, creating a burning hurricane."
+            },
+            "Venom": {
+                teamup: "Symbiote Shenanigans",
+                effect: "Grants Venom 150 extra HP. Grants Jeff the Land Shark the \"Guardian of the Deep\" Ability, enabling passive healing, with extra bonus health."
+            }
         },
         HEROES: {
             tank: ['Captain America', 'Dr. Strange', 'Emma Frost', 'Groot', 'Hulk', 'Magneto', 'Peni Parker', 'The Thing', 'Thor', 'Venom'],
