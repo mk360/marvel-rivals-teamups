@@ -267,6 +267,7 @@ function setupEventListeners() {
         currentSlotIndex = null;
         populateHeroRoster();
         createTeamSlots();
+        document.getElementById("activeTeamups").innerHTML = "";
     };
     // Close modal
     document.getElementById('closeModal').addEventListener('click', closeCharacterModal);

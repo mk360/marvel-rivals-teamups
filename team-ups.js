@@ -180,7 +180,7 @@ function generateTeamupOptimizedTeam({ currentLineup, currentSeason }) {
     }
 
     // Step 2: If no more expansions, pick random and repeat
-    const allHeroes = Object.keys(TEAM_UPS);
+    const allHeroes = Object.keys(TEAMUPS_COPY);
     while (finalTeam.size < 6) {
         const pool = allHeroes.filter(h => !seen.has(h));
         if (pool.length === 0) break;
@@ -192,5 +192,5 @@ function generateTeamupOptimizedTeam({ currentLineup, currentSeason }) {
         addTeamUpsFrom(randomPick);
     }
 
-    return [...finalTeam];
+    return [...finalTeam].slice(0, 6);
 }
