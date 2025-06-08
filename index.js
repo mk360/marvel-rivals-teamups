@@ -24,13 +24,14 @@ function createTeamSlots() {
                         </div>
                         <div class="text-sm font-medium mb-1">Slot ${i + 1}</div>
                         <div class="text-xs text-marvel-text/70">${teamSlots[i] === 'free' ? 'Any Role' : teamSlots[i].toUpperCase()}</div>
-                        <button class="text-xs text-blue-400 hover:text-blue-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button class="text-xs text-blue-400 hover:text-blue-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity slot-${i + 1}">
                             ${currentTeam[i] ? 'Change' : 'Select'}
                         </button>
                     </div>
                 `;
-        slot.addEventListener('click', () => openCharacterModal(i));
         teamSlotsContainer.appendChild(slot);
+        const btn = document.getElementsByClassName("slot-" + (i + 1))[0];
+        btn.addEventListener('click', () => openCharacterModal(i));
     }
 }
 
@@ -62,8 +63,6 @@ function updateTeamSlot(index) {
                         </button>
                     </div>
                 `;
-    } else {
-
     }
 }
 
@@ -128,7 +127,7 @@ function selectHero(hero) {
         updateTeamSlot(currentSlotIndex);
         populateHeroRoster(); // Refresh to show selected state
         closeCharacterModal();
-        checkTeamUps();
+        checkTeamUps(currentTeam);
     }
 }
 
@@ -140,7 +139,7 @@ function removeHero(index) {
         updateTeamSlot(i);
     }
     populateHeroRoster(); // Refresh hero roster
-    checkTeamUps();
+    checkTeamUps(currentTeam);
 }
 
 function getHeroRole(hero) {
@@ -152,22 +151,32 @@ function getHeroRole(hero) {
     return 'unknown';
 }
 
-function checkTeamUps() {
-    // const activeTeamUps = [];
-    // const selectedHeroes = currentTeam.filter(hero => hero !== null);
+function checkTeamUps(team) {
+    const currentSeason = gameVersionSelect.value;
+    const teamUps = TEAMUPS_DATA[currentSeason].TEAMUP_NAMES;
+    const activeTeamUps = team.filter((mem) => {
+        const isAnchor = mem in teamUps;
+        if (isAnchor) {
+            const teamupActivated = TEAMUPS_DATA[currentSeason].TEAM_UPS[mem].some((partner) => team.includes(partner));
+            return isAnchor && teamupActivated;
+        }
+        return false;
+    }).map((anchor) => {
+        const teamupName = TEAMUPS_DATA[currentSeason].TEAMUP_NAMES[anchor].teamup;
+        const teamupEffect = TEAMUPS_DATA[currentSeason].TEAMUP_NAMES[anchor].effect;
+        const memberList = TEAMUPS_DATA[currentSeason].TEAM_UPS[anchor].map((partner) => ({
+            partner,
+            included: team.includes(partner)
+        }));
+        return {
+            teamupName,
+            memberList: memberList.sort((i, j) => +j.included - +i.included),
+            anchor,
+            effect: teamupEffect
+        };
+    });
 
-    // for (const [teamUpName, teamUpData] of Object.entries(teamUps)) {
-    //     const matchingHeroes = teamUpData.heroes.filter(hero => selectedHeroes.includes(hero));
-    //     if (matchingHeroes.length >= 2) {
-    //         activeTeamUps.push({
-    //             name: teamUpName,
-    //             matchingHeroes,
-    //             ...teamUpData
-    //         });
-    //     }
-    // }
-
-    // displayTeamUps(activeTeamUps);
+    displayTeamUps(activeTeamUps);
 }
 
 function displayTeamUps(activeTeamUps) {
@@ -184,12 +193,22 @@ function displayTeamUps(activeTeamUps) {
 
     activeTeamUps.forEach(teamUp => {
         const teamUpElement = document.createElement('div');
-        teamUpElement.className = 'bg-marvel-accent/20 rounded-lg p-4 border border-marvel-accent/30';
+        teamUpElement.className = 'bg-marvel-accent/20 rounded-lg py-4 px-2 border border-marvel-accent/30 grid grid-cols-[1fr_4fr] gap-x-4 grid-rows-[auto_auto_auto]';
         teamUpElement.innerHTML = `
-                    <h4 class="font-semibold text-lg mb-2 text-yellow-400">${teamUp.name}</h4>
-                    <p class="text-sm mb-2"><strong>Active Heroes:</strong> ${teamUp.matchingHeroes.join(', ')}</p>
-                    <p class="text-sm mb-2"><strong>Effect:</strong> ${teamUp.effect}</p>
-                    <p class="text-sm"><strong>Benefits:</strong> ${teamUp.benefits}</p>
+                    <div></div>
+                    <h4 class="font-semibold text-lg mb-2 text-yellow-400">${teamUp.teamupName}</h4>
+                    <img class="md:h-full md:w-full w-24 h-24" src="./teamup-icons/${teamUp.teamupName.replace(/[ :]/g, "-").toLowerCase()}.webp" />
+                    <div>
+                        <div class="flex gap-4 items-center"><div class="w-24 h-24 rounded-lg font-bold hero-picture ${teamUp.anchor.toLowerCase().replace(/[. &]/g, "")}"></div>
+                        ${teamUp.memberList.map((partnerData) => {
+            return `<div class="bg-marvel-accent/20 my-4 w-24 h-24 rounded-lg font-bold hero-picture ${partnerData.partner.toLowerCase().replace(/[. &]/g, "")}">
+                            ${!partnerData.included ? `<div class="h-full w-full bg-black/50"></div>` : ""}
+            </div>`;
+        }).join("")}
+        </div>
+        </div>
+        <div class="md:block sm:hidden"></div>
+        <p class="text-sm mb-2 md:col-span-1 sm:col-span-2"><strong>Effect:</strong> ${teamUp.effect}</p>
                 `;
         details.appendChild(teamUpElement);
     });
@@ -229,7 +248,7 @@ function generateTeam() {
         }
 
         populateHeroRoster();
-        checkTeamUps();
+        checkTeamUps(currentTeam);
 
         // Scroll to team-up explanation if visible
         setTimeout(() => {

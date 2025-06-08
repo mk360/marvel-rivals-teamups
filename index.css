@@ -8,6 +8,10 @@
     background-image: url("./banners/hulk.png");
 }
 
+.not-included {
+    filter: brightness(0.9);
+}
+
 .captainamerica {
     background-image: url("./banners/captain\ america.png");
     background-position: 5% 0;
